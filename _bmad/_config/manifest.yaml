@@ -1,0 +1,11 @@
+installation:
+  version: 6.0.0-alpha.23
+  installDate: 2026-01-24T16:22:15.771Z
+  lastUpdated: 2026-01-24T16:22:15.771Z
+modules:
+  - core
+  - bmb
+  - bmm
+  - cis
+ides:
+  - gemini
