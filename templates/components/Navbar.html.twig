@@ -15,8 +15,8 @@
 			<div class="hidden lg:flex items-center space-x-6">
 				{% for section in menu_sections %}
 					{# On affiche les sections principales dans la nav #}
-					{% if section.id in ['poulet', 'premiums', 'deluxes', 'kebab', 'hotdog'] %}
-						<a href="#{{ section.id }}" data-controller="smooth-scroll" class="font-bold hover:text-brand-orange transition-colors text-xs uppercase tracking-widest">{{ section.title|split(' ')|first }}</a>
+					{% if section.id in ['poulet','kebab', 'hotdog', 'boxs', 'enfant'] %}
+						<a href="#{{ section.id }}" data-controller="smooth-scroll" class="font-bold hover:text-brand-orange transition-colors text-xs uppercase tracking-widest">{{ section.navLabel|default(section.title) }}</a>
 					{% endif %}
 				{% endfor %}
 				<a href="tel:0760568103" class="text-brand-brown font-bold text-sm">07 60 56 81 03</a>
@@ -24,7 +24,7 @@
 			</div>
 
 			{# Burger Mobile #}
-			<button data-action="click->mobile-menu#toggle" class="lg:hidden flex items-center p-2 text-brand-brown">
+			<button data-action="click->mobile-menu#toggle" class="lg:hidden flex items-center p-2 text-brand-brown" aria-label="Ouvrir le menu mobile">
 				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
 				</svg>
@@ -34,7 +34,7 @@
 
 	{# Overlay Menu Mobile #}
 	<div id="mobile-menu" data-mobile-menu-target="menu">
-		<button data-action="click->mobile-menu#close" class="absolute top-6 right-6 text-white p-2">
+		<button data-action="click->mobile-menu#close" class="absolute top-6 right-6 text-white p-2" aria-label="Fermer le menu mobile">
 			<svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path>
 			</svg>
@@ -42,8 +42,8 @@
 		<div class="flex flex-col items-center gap-8 text-center text-white font-bungee">
 			<span class="text-brand-yellow text-4xl mb-4 uppercase underline decoration-brand-orange decoration-4">La Carte</span>
 			{% for section in menu_sections %}
-				{% if section.id in ['poulet', 'premiums', 'deluxes', 'kebab', 'hotdog', 'salades', 'boxs'] %}
-					<a href="#{{ section.id }}" data-controller="smooth-scroll" data-action="click->mobile-menu#close" class="text-2xl uppercase hover:text-brand-orange">{{ section.title|split(' ')|first }}</a>
+				{% if section.id in ['poulet','kebab', 'hotdog', 'boxs', 'enfant'] %}
+					<a href="#{{ section.id }}" data-controller="smooth-scroll" data-action="click->mobile-menu#close" class="text-2xl uppercase hover:text-brand-orange">{{ section.navLabel|default(section.title) }}</a>
 				{% endif %}
 			{% endfor %}
 			<hr class="w-24 border-white/20">

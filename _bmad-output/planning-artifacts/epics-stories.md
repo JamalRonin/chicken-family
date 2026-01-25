@@ -196,9 +196,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Score Lighthouse > 90 (Performance, SEO, Accessibilité).
-- [ ] Pas d'erreur console JS.
-- [ ] Validation W3C du HTML généré.
+- [x] Score Lighthouse > 90 (Performance, SEO, Accessibilité).
+- [x] Pas d'erreur console JS.
+- [x] Validation W3C du HTML généré.
 
 ### Story 5.2 : Préparation Production
 
@@ -208,6 +208,6 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] `composer install --no-dev`.
-- [ ] Assets compilés et versionnés.
-- [ ] Cache warmup effectué.
+- [x] `composer install --no-dev`.
+- [x] Assets compilés et versionnés.
+- [x] Cache warmup effectué.

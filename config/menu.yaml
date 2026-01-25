@@ -3,6 +3,7 @@ parameters:
         burgers_classiques:
             id: "poulet"
             title: "Burgers Classiques"
+            navLabel: "Burgers"
             subtitle: "6,90€ Seul / 8,90€ Menu"
             color: "yellow"
             items:
@@ -22,6 +23,7 @@ parameters:
         burgers_premiums:
             id: "premiums"
             title: "Burgers Premiums"
+            navLabel: "Burgers Premiums"
             subtitle: "8,90€ Seul / 10,90€ Menu"
             color: "orange"
             items:
@@ -57,6 +59,7 @@ parameters:
         burgers_deluxes:
             id: "deluxes"
             title: "Burgers Deluxes"
+            navLabel: "Burgers Deluxes"
             subtitle: "9,90€ Seul / 11,90€ Menu"
             color: "brown"
             items:
@@ -72,6 +75,7 @@ parameters:
         kebab_family:
             id: "kebab"
             title: "Kebab Family"
+            navLabel: "Kebab"
             subtitle: "6,90€ Seul / 8,90€ Menu"
             color: "red"
             items:
@@ -99,6 +103,7 @@ parameters:
         kebabs_monde:
             id: "kebabs-monde"
             title: "Kebabs du Monde"
+            navLabel: "Kebabs du Monde"
             subtitle: "9,90€ Seul / 11,90€ Menu"
             color: "red"
             items:
@@ -124,6 +129,7 @@ parameters:
         hotdogs:
             id: "hotdog"
             title: "Nos Hot-Dogs"
+            navLabel: "Hot-Dog"
             subtitle: "Tenders & Pain Moelleux"
             color: "orange"
             items:
@@ -143,6 +149,7 @@ parameters:
         salades:
             id: "salades"
             title: "Nos Salades"
+            navLabel: "Salades"
             subtitle: "Base crudités + Viande au choix"
             color: "orange"
             items:
@@ -155,6 +162,7 @@ parameters:
         boxs:
             id: "boxs"
             title: "Nos Boxs"
+            navLabel: "Boxs"
             subtitle: "+ Frites & Boisson"
             color: "red"
             items:
@@ -174,6 +182,7 @@ parameters:
         enfant:
             id: "enfant"
             title: "Menu Enfant"
+            navLabel: "Enfant"
             subtitle: "Pour les petits héros"
             color: "yellow"
             items:
@@ -184,6 +193,7 @@ parameters:
         bigmenu:
             id: "bigmenu"
             title: "Big Menu ⚡"
+            navLabel: "Big Menu"
             subtitle: "+3€ sur votre menu"
             color: "red"
             type: "upgrade"
@@ -210,6 +220,7 @@ parameters:
         supplements:
             id: "supplements"
             title: "Suppléments"
+            navLabel: "Suppléments"
             subtitle: "+1,50€"
             color: "brown"
             type: "list"

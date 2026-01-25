@@ -14,6 +14,7 @@ readonly class MenuSectionDTO
         public string $color,
         public array $items,
         public ?string $type = null,
+        public ?string $navLabel = null,
     ) {}
 
     public static function fromArray(string $key, array $data): self
@@ -29,7 +30,8 @@ readonly class MenuSectionDTO
             subtitle: $data['subtitle'],
             color: $data['color'],
             items: $items,
-            type: $data['type'] ?? null
+            type: $data['type'] ?? null,
+            navLabel: $data['navLabel'] ?? null
         );
     }
 }
