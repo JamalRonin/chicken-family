@@ -1,15 +1,15 @@
 ---
 stepsCompleted:
-  [
-    "step-01-init",
-    "step-02-discovery",
-    "step-03-success",
-    "step-04-journeys",
-    "step-05-architecture",
-  ]
+    [
+        "step-01-init",
+        "step-02-discovery",
+        "step-03-success",
+        "step-04-journeys",
+        "step-05-architecture",
+    ]
 inputDocuments:
-  - "_bmad-output/planning-artifacts/prd.md"
-  - "_bmad-output/planning-artifacts/architecture.md"
+    - "_bmad-output/planning-artifacts/prd.md"
+    - "_bmad-output/planning-artifacts/architecture.md"
 workflowType: "epics-stories"
 ---
 
@@ -40,7 +40,7 @@ workflowType: "epics-stories"
 ### Story 1.2 : Initialisation du Projet Symfony (via Docker)
 
 **En tant que** Développeur,
-**Je veux** initialiser le projet Symfony en utilisant le conteneur PHP,
+**Je veux** initialiser le projet Symfony (version 7.4) en utilisant le conteneur PHP,
 **Afin de** garantir que les dépendances sont installées avec la bonne version de PHP.
 
 **Critères d'Acceptation:**

@@ -10,7 +10,7 @@ L'objectif est de refondre le site statique actuel en une application Symfony mo
 
 ### Stack Technique
 
-- **Framework Backend:** Symfony 6.4+ (LTS)
+- **Framework Backend:** Symfony 7.4
 - **Langage:** PHP 8.3
 - **Frontend:** Twig, Stimulus.js, Tailwind CSS
 - **Gestion des Assets:** AssetMapper (Pas de Node.js en prod)
