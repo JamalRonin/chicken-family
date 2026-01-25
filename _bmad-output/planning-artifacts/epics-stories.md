@@ -77,9 +77,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Classe `MenuItemDTO` créée (readonly) avec propriétés : nom, desc, prix, emoji.
-- [ ] Classe `MenuSectionDTO` créée (readonly) avec liste de `MenuItemDTO`.
-- [ ] Les types correspondent strictement au YAML prévu.
+- [x] Classe `MenuItemDTO` créée (readonly) avec propriétés : nom, desc, prix, emoji.
+- [x] Classe `MenuSectionDTO` créée (readonly) avec liste de `MenuItemDTO`.
+- [x] Les types correspondent strictement au YAML prévu.
 
 ### Story 2.2 : Configuration YAML du Menu
 
@@ -89,9 +89,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Fichier `config/menu.yaml` créé.
-- [ ] Structure respectée : Sections -> Items.
-- [ ] Données initiales du site actuel migrées dans ce fichier.
+- [x] Fichier `config/menu.yaml` créé.
+- [x] Structure respectée : Sections -> Items.
+- [x] Données initiales du site actuel migrées dans ce fichier.
 
 ### Story 2.3 : Service MenuProvider
 
@@ -101,9 +101,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Service `MenuProvider` implémenté.
-- [ ] Méthode `getAllSections()` retourne un tableau de `MenuSectionDTO`.
-- [ ] Gestion d'erreur si le fichier YAML est malformé.
+- [x] Service `MenuProvider` implémenté.
+- [x] Méthode `getAllSections()` retourne un tableau de `MenuSectionDTO`.
+- [x] Gestion d'erreur si le fichier YAML est malformé.
 
 ---
 
