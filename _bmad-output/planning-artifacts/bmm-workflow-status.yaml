@@ -29,7 +29,7 @@ workflow_status:
         workflow_path: "_bmad/bmm/workflows/document-project/workflow.yaml"
         output_expected: "Comprehensive project documentation"
         purpose: "Understand existing codebase before planning"
-        completed: null
+        completed: "docs/index.md"
 
   # Phase 1 - Analysis (Optional Discovery)
   phase_1_analysis:
