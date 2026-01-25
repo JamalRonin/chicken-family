@@ -1,0 +1,16 @@
+{% props section %}
+
+<div id="{{ section.id }}" class="max-w-7xl mx-auto scroll-mt-24 px-2">
+	<div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b-4 pb-4 border-brand-{{ section.color }}">
+		<div class="text-left">
+			<h3 class="font-bungee text-2xl lg:text-5xl uppercase tracking-tighter text-brand-{{ section.color }}">{{ section.title }}</h3>
+			<p class="font-bold opacity-70 mt-1 uppercase tracking-widest text-[10px] lg:text-sm text-brand-brown">{{ section.subtitle }}</p>
+		</div>
+	</div>
+
+	<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
+		{% for item in section.items %}
+			<twig:MenuCard :item="item" :color="section.color" :type="section.type|default('default')"/>
+		{% endfor %}
+	</div>
+</div>

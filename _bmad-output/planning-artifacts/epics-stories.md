@@ -32,10 +32,10 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] `docker-compose.yml` créé selon spécifications Architecture (Section 4).
-- [ ] Service PHP-FPM 8.3 configuré.
-- [ ] Service Nginx configuré avec accès au dossier `public/`.
-- [ ] Possibilité d'exécuter `composer` et `php` dans le conteneur.
+- [x] `docker-compose.yml` créé selon spécifications Architecture (Section 4).
+- [x] Service PHP-FPM 8.3 configuré.
+- [x] Service Nginx configuré avec accès au dossier `public/`.
+- [x] Possibilité d'exécuter `composer` et `php` dans le conteneur.
 
 ### Story 1.2 : Initialisation du Projet Symfony (via Docker)
 
@@ -45,10 +45,10 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Commande `composer create-project` exécutée dans le conteneur.
-- [ ] Composants installés : `webapp`, `asset-mapper`, `stimulus-bundle`, `yaml`, `http-client`.
-- [ ] Git initialisé avec `.gitignore` standard Symfony.
-- [ ] Le site répond "Welcome to Symfony" sur `http://localhost:8080`.
+- [x] Commande `composer create-project` exécutée dans le conteneur.
+- [x] Composants installés : `webapp`, `asset-mapper`, `stimulus-bundle`, `yaml`, `http-client`.
+- [x] Git initialisé avec `.gitignore` standard Symfony.
+- [x] Le site répond "Welcome to Symfony" sur `http://localhost:8080`.
 
 ### Story 1.3 : Structure "Feature-based"
 
@@ -58,9 +58,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Dossiers créés : `src/Menu`, `src/Chat`, `src/Home`.
-- [ ] Sous-dossiers `Controller`, `Service`, `DTO` dans chaque feature.
-- [ ] Suppression des dossiers par défaut inutiles si nécessaire.
+- [x] Dossiers créés : `src/Menu`, `src/Chat`, `src/Home`.
+- [x] Sous-dossiers `Controller`, `Service`, `DTO` dans chaque feature.
+- [x] Suppression des dossiers par défaut inutiles si nécessaire.
 
 ---
 
@@ -164,10 +164,10 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Composant `MenuCard` créé (Image/Emoji, Titre, Desc, Prix).
-- [ ] Composant `MenuSection` pour lister les cartes.
-- [ ] Page d'accueil intégrant ces composants.
-- [ ] Responsive : Grille adaptée Mobile/Desktop.
+- [x] Composant `MenuCard` créé (Image/Emoji, Titre, Desc, Prix).
+- [x] Composant `MenuSection` pour lister les cartes.
+- [x] Page d'accueil intégrant ces composants.
+- [x] Responsive : Grille adaptée Mobile/Desktop.
 
 ### Story 4.3 : Interactivité Stimulus (Chat & Nav)
 
@@ -177,9 +177,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Controller `mobile-menu` (ouverture/fermeture).
-- [ ] Controller `chat-widget` (fenêtre flottante, appel API asynchrone).
-- [ ] Controller `smooth-scroll` pour les ancres.
+- [x] Controller `mobile-menu` (ouverture/fermeture).
+- [x] Controller `chat-widget` (fenêtre flottante, appel API asynchrone).
+- [x] Controller `smooth-scroll` pour les ancres.
 
 ---
 

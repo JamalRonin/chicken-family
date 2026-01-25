@@ -1,3 +1,128 @@
-body {
-    background-color: skyblue;
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;600;700&display=swap");
+
+@theme {
+    --color-brand-brown: #3d2b1f;
+    --color-brand-yellow: #ffc244;
+    --color-brand-orange: #f57c00;
+    --color-brand-cream: #fff9f0;
+    --color-brand-red: #b22222;
+
+    --font-bungee: "Bungee", system-ui;
+    --font-inter: "Inter", system-ui;
 }
+
+@layer base {
+    body {
+        @apply font-inter bg-brand-cream text-brand-brown antialiased;
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    .font-bungee {
+        @apply font-bungee;
+    }
+
+    .hero-clip {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    }
+
+    .floating {
+        animation: floating 3s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    .menu-card {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .menu-card:hover {
+        @apply -translate-y-2 shadow-2xl;
+    }
+
+    .loader {
+        @apply border-2 border-gray-200 border-t-brand-orange rounded-full w-5 h-5 animate-spin inline-block;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* Mobile Menu Overlay */
+    #mobile-menu {
+        @apply fixed inset-0 bg-brand-brown z-[110] flex flex-col items-center justify-center p-8 lg:hidden transition-transform duration-500 ease-in-out;
+        transform: translateX(100%);
+    }
+
+    #mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Chat Widget */
+    #chat-widget {
+        @apply fixed bottom-5 right-5 z-[1000] flex flex-col items-end;
+    }
+
+    #chat-window {
+        @apply w-[380px] max-w-[90vw] h-[550px] max-h-[80vh] bg-brand-cream rounded-[2rem] shadow-2xl hidden flex-col overflow-hidden mb-4 border-4 border-brand-yellow z-[2000];
+        transform-origin: bottom right;
+        animation: openChat 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @media (max-width: 768px) {
+        #chat-window {
+            @apply w-screen h-[100dvh] max-w-none max-h-none fixed top-0 left-0 right-0 bottom-0 rounded-none mb-0 border-none;
+        }
+    }
+
+    @keyframes openChat {
+        from { transform: scale(0.5); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+
+    .chat-container {
+        @apply flex-grow overflow-y-auto flex flex-col gap-3 p-5 bg-white;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .message-bubble {
+        @apply max-w-[85%] px-4 py-3 rounded-[20px] text-[0.95rem] leading-relaxed break-words;
+    }
+
+    .user-message {
+        @apply self-end bg-brand-orange text-white rounded-br-none;
+    }
+
+    .bot-message {
+        @apply self-start bg-brand-cream text-brand-brown rounded-bl-none border border-black/5;
+    }
+
+    #chat-toggle-btn {
+        @apply w-16 h-16 rounded-full bg-brand-brown text-white flex items-center justify-center shadow-2xl cursor-pointer transition-all duration-300 relative;
+    }
+
+    #chat-toggle-btn:hover {
+        @apply scale-110 rotate-6 bg-brand-orange;
+    }
+
+    body.lock-scroll {
+        @apply overflow-hidden h-screen;
+    }
+}
+

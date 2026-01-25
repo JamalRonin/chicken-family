@@ -1,0 +1,41 @@
+{% props item, color = 'yellow', type = 'default' %}
+
+{% if type == 'list' %}
+	<div class="bg-white rounded-2xl p-4 shadow-sm border border-brand-brown/5 flex flex-col items-center text-center group hover:bg-brand-brown hover:text-white transition-all">
+		<div class="text-3xl mb-2">{{ item.emoji|default('🍗') }}</div>
+		<h4 class="font-bungee text-[10px] uppercase">{{ item.name }}</h4>
+		<p class="text-[8px] font-bold text-brand-orange mt-1">+1,50€</p>
+	</div>
+{% elseif type == 'upgrade' %}
+	<div class="bg-brand-brown text-white rounded-2xl p-4 shadow-xl flex flex-col items-center text-center border-2 border-brand-red/50">
+		<div class="text-3xl mb-2">{{ item.emoji|default('🍗') }}</div>
+		<h4 class="font-bungee text-[10px] uppercase">{{ item.name }}</h4>
+	</div>
+{% else %}
+	<div class="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-4 lg:p-6 shadow-md menu-card border border-brand-brown/5 flex flex-col group">
+		<div class="h-32 lg:h-56 bg-brand-cream rounded-xl lg:rounded-2xl mb-4 lg:mb-6 flex items-center justify-center text-4xl lg:text-6xl group-hover:scale-110 transition-transform">
+			<span>{{ item.emoji|default('🍗') }}</span>
+		</div>
+		<h4 class="font-bungee text-xs lg:text-2xl mb-1 lg:mb-3 uppercase leading-tight tracking-tighter">{{ item.name }}</h4>
+		<p class="text-[10px] lg:text-sm text-brand-brown/70 flex-grow leading-tight">{{ item.description }}</p>
+
+		<div class="mt-4 pt-2 border-t border-brand-brown/10 text-[10px] lg:text-xs font-bold uppercase">
+			{% if item.priceSolo %}
+				<div class="flex justify-between">
+					<span>SEUL</span>
+					<span class="text-brand-{{ color }}">{{ item.priceSolo }}</span>
+				</div>
+			{% endif %}
+			{% if item.priceMenu %}
+				<div class="flex justify-between">
+					<span>MENU</span>
+					<span class="text-brand-{{ color }}">{{ item.priceMenu }}</span>
+				</div>
+			{% endif %}
+			{% if item.priceDouble %}
+				<p class="mt-1 text-brand-orange uppercase">Double :
+					{{ item.priceDouble }}</p>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}

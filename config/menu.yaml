@@ -186,6 +186,7 @@ parameters:
             title: "Big Menu ⚡"
             subtitle: "+3€ sur votre menu"
             color: "red"
+            type: "upgrade"
             items:
                 - name: "3 Tenders"
                   desc: ""
@@ -211,6 +212,7 @@ parameters:
             title: "Suppléments"
             subtitle: "+1,50€"
             color: "brown"
+            type: "list"
             items:
                 - name: "Bacon"
                   desc: ""
