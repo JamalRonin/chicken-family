@@ -120,10 +120,10 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Clé API stockée dans `.env.local` (non versionné).
-- [ ] Service `GeminiService` implémenté avec `HttpClient`.
-- [ ] System Prompt injecté avec les données du menu (JSON).
-- [ ] Disclaimer allergènes ajouté systématiquement (FR-006).
+- [x] Clé API stockée dans `.env.local` (non versionné).
+- [x] Service `GeminiService` implémenté avec `HttpClient`.
+- [x] System Prompt injecté avec les données du menu (JSON).
+- [x] Disclaimer allergènes ajouté systématiquement (FR-006).
 
 ### Story 3.2 : API Endpoint & Rate Limiting
 
@@ -133,9 +133,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Route `POST /api/chat` créée.
-- [ ] Rate Limiter configuré (10 req/min par IP) (NFR-005).
-- [ ] Retourne une réponse JSON standardisée.
+- [x] Route `POST /api/chat` créée.
+- [x] Rate Limiter configuré (10 req/min par IP) (NFR-005).
+- [x] Retourne une réponse JSON standardisée.
 
 ---
 
