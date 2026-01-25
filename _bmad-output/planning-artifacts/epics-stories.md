@@ -1,0 +1,213 @@
+---
+stepsCompleted:
+  [
+    "step-01-init",
+    "step-02-discovery",
+    "step-03-success",
+    "step-04-journeys",
+    "step-05-architecture",
+  ]
+inputDocuments:
+  - "_bmad-output/planning-artifacts/prd.md"
+  - "_bmad-output/planning-artifacts/architecture.md"
+workflowType: "epics-stories"
+---
+
+# Épics & User Stories - Refactoring Chicken Family
+
+**Date:** 25/01/2026
+**Auteur:** John (Product Manager)
+**Source:** PRD v1.0 & Architecture v1.0
+
+## Epic 1 : Infrastructure & Fondations (Phase 0)
+
+**Lien Architecture:** Phase 1 : Fondations
+**Objectif:** Mettre en place le socle technique Symfony/Docker validé par l'architecte.
+
+### Story 1.1 : Environnement Docker
+
+**En tant que** Développeur,
+**Je veux** un environnement conteneurisé (PHP 8.3, Nginx) prêt à l'emploi,
+**Afin de** pouvoir initialiser et exécuter le projet Symfony dans un environnement isolé.
+
+**Critères d'Acceptation:**
+
+- [ ] `docker-compose.yml` créé selon spécifications Architecture (Section 4).
+- [ ] Service PHP-FPM 8.3 configuré.
+- [ ] Service Nginx configuré avec accès au dossier `public/`.
+- [ ] Possibilité d'exécuter `composer` et `php` dans le conteneur.
+
+### Story 1.2 : Initialisation du Projet Symfony (via Docker)
+
+**En tant que** Développeur,
+**Je veux** initialiser le projet Symfony en utilisant le conteneur PHP,
+**Afin de** garantir que les dépendances sont installées avec la bonne version de PHP.
+
+**Critères d'Acceptation:**
+
+- [ ] Commande `composer create-project` exécutée dans le conteneur.
+- [ ] Composants installés : `webapp`, `asset-mapper`, `stimulus-bundle`, `yaml`, `http-client`.
+- [ ] Git initialisé avec `.gitignore` standard Symfony.
+- [ ] Le site répond "Welcome to Symfony" sur `http://localhost:8080`.
+
+### Story 1.3 : Structure "Feature-based"
+
+**En tant que** Développeur,
+**Je veux** organiser mes dossiers par fonctionnalité (`Menu`, `Chat`, `Home`),
+**Afin de** respecter l'architecture modulaire définie (ADR-003).
+
+**Critères d'Acceptation:**
+
+- [ ] Dossiers créés : `src/Menu`, `src/Chat`, `src/Home`.
+- [ ] Sous-dossiers `Controller`, `Service`, `DTO` dans chaque feature.
+- [ ] Suppression des dossiers par défaut inutiles si nécessaire.
+
+---
+
+## Epic 2 : Gestion du Menu & Données (Phase 1)
+
+**Lien PRD:** FR-001, FR-002, FR-003
+**Lien Architecture:** Section 3.1
+
+### Story 2.1 : Modélisation des Données (DTOs)
+
+**En tant que** Développeur,
+**Je veux** créer les objets de transfert de données (DTO),
+**Afin de** manipuler des objets typés et non des tableaux en vrac.
+
+**Critères d'Acceptation:**
+
+- [ ] Classe `MenuItemDTO` créée (readonly) avec propriétés : nom, desc, prix, emoji.
+- [ ] Classe `MenuSectionDTO` créée (readonly) avec liste de `MenuItemDTO`.
+- [ ] Les types correspondent strictement au YAML prévu.
+
+### Story 2.2 : Configuration YAML du Menu
+
+**En tant que** Administrateur (Jamal),
+**Je veux** éditer le menu dans un fichier `menu.yaml`,
+**Afin de** mettre à jour les prix et produits sans toucher au PHP.
+
+**Critères d'Acceptation:**
+
+- [ ] Fichier `config/menu.yaml` créé.
+- [ ] Structure respectée : Sections -> Items.
+- [ ] Données initiales du site actuel migrées dans ce fichier.
+
+### Story 2.3 : Service MenuProvider
+
+**En tant que** Développeur,
+**Je veux** un service qui lit le YAML et retourne des DTOs,
+**Afin d'** alimenter les contrôleurs avec des données propres.
+
+**Critères d'Acceptation:**
+
+- [ ] Service `MenuProvider` implémenté.
+- [ ] Méthode `getAllSections()` retourne un tableau de `MenuSectionDTO`.
+- [ ] Gestion d'erreur si le fichier YAML est malformé.
+
+---
+
+## Epic 3 : Chatbot IA Sécurisé (Phase 1)
+
+**Lien PRD:** FR-004 à FR-007, NFR-004, NFR-005
+**Lien Architecture:** Section 3.2
+
+### Story 3.1 : Service Gemini (Backend)
+
+**En tant que** Système,
+**Je veux** interroger l'API Google Gemini via un service Symfony,
+**Afin de** générer des réponses sans exposer la clé API.
+
+**Critères d'Acceptation:**
+
+- [ ] Clé API stockée dans `.env.local` (non versionné).
+- [ ] Service `GeminiService` implémenté avec `HttpClient`.
+- [ ] System Prompt injecté avec les données du menu (JSON).
+- [ ] Disclaimer allergènes ajouté systématiquement (FR-006).
+
+### Story 3.2 : API Endpoint & Rate Limiting
+
+**En tant que** Développeur,
+**Je veux** exposer une route `/api/chat` protégée,
+**Afin que** le frontend puisse dialoguer avec l'IA.
+
+**Critères d'Acceptation:**
+
+- [ ] Route `POST /api/chat` créée.
+- [ ] Rate Limiter configuré (10 req/min par IP) (NFR-005).
+- [ ] Retourne une réponse JSON standardisée.
+
+---
+
+## Epic 4 : Interface Utilisateur & UX (Phase 2)
+
+**Lien PRD:** FR-008 à FR-012, NFR-001 à NFR-003
+**Lien Architecture:** Section 3.3
+
+### Story 4.1 : Intégration Tailwind CSS
+
+**En tant que** Designer,
+**Je veux** utiliser Tailwind CSS avec la charte graphique Chicken Family,
+**Afin d'** avoir un design fidèle et performant.
+
+**Critères d'Acceptation:**
+
+- [ ] Tailwind installé et configuré (couleurs brand, polices).
+- [ ] Compilation CSS fonctionnelle via script npm.
+- [ ] Fichier CSS de sortie chargé par AssetMapper.
+
+### Story 4.2 : Composants Twig (Menu & Home)
+
+**En tant que** Utilisateur,
+**Je veux** voir le menu affiché avec le design "carte",
+**Afin de** choisir mon repas facilement.
+
+**Critères d'Acceptation:**
+
+- [ ] Composant `MenuCard` créé (Image/Emoji, Titre, Desc, Prix).
+- [ ] Composant `MenuSection` pour lister les cartes.
+- [ ] Page d'accueil intégrant ces composants.
+- [ ] Responsive : Grille adaptée Mobile/Desktop.
+
+### Story 4.3 : Interactivité Stimulus (Chat & Nav)
+
+**En tant que** Utilisateur Mobile,
+**Je veux** un menu burger et un widget de chat fluide,
+**Afin de** naviguer sans rechargement de page.
+
+**Critères d'Acceptation:**
+
+- [ ] Controller `mobile-menu` (ouverture/fermeture).
+- [ ] Controller `chat-widget` (fenêtre flottante, appel API asynchrone).
+- [ ] Controller `smooth-scroll` pour les ancres.
+
+---
+
+## Epic 5 : Qualité & Déploiement (Phase 3)
+
+**Lien PRD:** NFR-001, NFR-002
+**Lien Architecture:** Phase 4
+
+### Story 5.1 : Optimisation & Tests
+
+**En tant que** Développeur,
+**Je veux** valider les performances et le fonctionnement,
+**Afin de** livrer un site de qualité professionnelle.
+
+**Critères d'Acceptation:**
+
+- [ ] Score Lighthouse > 90 (Performance, SEO, Accessibilité).
+- [ ] Pas d'erreur console JS.
+- [ ] Validation W3C du HTML généré.
+
+### Story 5.2 : Préparation Production
+
+**En tant que** Développeur,
+**Je veux** préparer les artefacts de déploiement,
+**Afin de** mettre en ligne la V1.
+
+**Critères d'Acceptation:**
+
+- [ ] `composer install --no-dev`.
+- [ ] Assets compilés et versionnés.
+- [ ] Cache warmup effectué.

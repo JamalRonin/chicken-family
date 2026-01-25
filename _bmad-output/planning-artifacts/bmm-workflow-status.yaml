@@ -43,7 +43,7 @@ workflow_status:
         command: "/bmad:bmm:workflows:brainstorming"
         workflow_path: "_bmad/core/workflows/brainstorming/workflow.md"
         note: "Creative exploration for site improvements"
-        completed: null
+        completed: "_bmad-output/analysis/brainstorming-session-2026-01-24.md"
 
   # Phase 2 - Planning
   phase_2_planning:
@@ -57,7 +57,7 @@ workflow_status:
         command: "/bmad:bmm:workflows:create-prd"
         workflow_path: "_bmad/bmm/workflows/2-plan-workflows/prd/workflow.md"
         output_expected: "Product Requirements Document with FRs and NFRs"
-        completed: null
+        completed: "_bmad-output/planning-artifacts/prd.md"
 
       - id: "create-ux-design"
         name: "UX Design"
@@ -81,7 +81,7 @@ workflow_status:
         workflow_path: "_bmad/bmm/workflows/3-solutioning/create-architecture/workflow.md"
         output_expected: "System architecture document"
         note: "Refactoring strategy from monolithic to modular"
-        completed: null
+        completed: "_bmad-output/planning-artifacts/architecture.md"
 
       - id: "create-epics-and-stories"
         name: "Epics & Stories"
@@ -90,7 +90,7 @@ workflow_status:
         command: "/bmad:bmm:workflows:create-epics-and-stories"
         workflow_path: "_bmad/bmm/workflows/3-solutioning/create-epics-and-stories/workflow.md"
         note: "Break down PRD into implementable stories"
-        completed: null
+        completed: "_bmad-output/planning-artifacts/epics-stories.md"
 
       - id: "test-design"
         name: "Test Design"
@@ -108,7 +108,7 @@ workflow_status:
         command: "/bmad:bmm:workflows:implementation-readiness"
         workflow_path: "_bmad/bmm/workflows/3-solutioning/check-implementation-readiness/workflow.md"
         note: "Validates PRD + Architecture + Epics before coding starts"
-        completed: null
+        completed: "2026-01-25 - All artifacts consistent"
 
   # Phase 4 - Implementation
   phase_4_implementation:
@@ -126,8 +126,8 @@ workflow_status:
 
 # Next Steps
 next_workflow:
-  id: "document-project"
-  name: "Document Existing Project"
-  agent: "analyst"
-  command: "/bmad:bmm:workflows:document-project"
-  description: "Analyze your existing HTML file to understand current structure before planning improvements"
+  id: "sprint-planning"
+  name: "Sprint Planning"
+  agent: "sm"
+  command: "/bmad:bmm:workflows:sprint-planning"
+  description: "Select stories for the first sprint (Epic 1) and create the implementation plan."
