@@ -152,9 +152,9 @@ workflowType: "epics-stories"
 
 **Critères d'Acceptation:**
 
-- [ ] Tailwind installé et configuré (couleurs brand, polices).
-- [ ] Compilation CSS fonctionnelle via script npm.
-- [ ] Fichier CSS de sortie chargé par AssetMapper.
+- [x] Tailwind installé et configuré (couleurs brand, polices).
+- [x] Compilation CSS fonctionnelle via script npm.
+- [x] Fichier CSS de sortie chargé par AssetMapper.
 
 ### Story 4.2 : Composants Twig (Menu & Home)
 
