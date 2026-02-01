@@ -7,6 +7,9 @@
 /public/bundles/
 /var/*
 !/var/tailwind/
+#!/var/tailwind/app.built.css
+/var/tailwind/**
+!/var/tailwind/app.built.css
 /vendor/
 ###< symfony/framework-bundle ###
 
@@ -19,4 +22,3 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
-!/var/tailwind/
