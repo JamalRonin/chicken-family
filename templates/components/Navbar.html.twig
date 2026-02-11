@@ -6,7 +6,7 @@
 	<nav class="fixed top-0 left-0 w-full z-[100] bg-white/95 backdrop-blur-sm border-b border-brand-brown/10 h-16 lg:h-20">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
 			<div class="flex-shrink-0 flex items-center gap-2">
-				<img src="{{ asset('photo_chicken/logochicken.png') }}" alt="Chicken Family" class="h-10 w-auto lg:h-12" loading="lazy" width="96" height="96"/>
+				<img src="{{ asset('photo_chicken/logochicken.png') }}" alt="Chicken Family" class="h-10 w-auto lg:h-12" loading="lazy"/>
 				<span class="font-bungee text-xl lg:text-2xl text-brand-brown tracking-tighter uppercase">CHICKEN
 					<span class="text-brand-orange">FAMILY</span>
 				</span>
@@ -41,7 +41,7 @@
 			</svg>
 		</button>
 		<div class="flex flex-col items-center gap-8 text-center text-white font-bungee">
-			<img src="{{ asset('photo_chicken/logochicken.png') }}" alt="Chicken Family" class="h-16 w-auto" loading="lazy" width="128" height="128"/>
+			<img src="{{ asset('photo_chicken/logochicken.png') }}" alt="Chicken Family" class="h-16 w-auto" loading="lazy"/>
 			<span class="text-brand-yellow text-4xl mb-4 uppercase underline decoration-brand-orange decoration-4">La Carte</span>
 			{% for section in menu_sections %}
 				{% if section.id in ['poulet','kebab', 'hotdog', 'boxs', 'enfant'] %}
