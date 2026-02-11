@@ -6,6 +6,7 @@
 	<nav class="fixed top-0 left-0 w-full z-[100] bg-white/95 backdrop-blur-sm border-b border-brand-brown/10 h-16 lg:h-20">
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center">
 			<div class="flex-shrink-0 flex items-center gap-2">
+				<img src="{{ asset('photo_chicken/logochicken.png') }}" alt="Chicken Family" class="h-10 w-auto lg:h-12" loading="lazy" width="96" height="96"/>
 				<span class="font-bungee text-xl lg:text-2xl text-brand-brown tracking-tighter uppercase">CHICKEN
 					<span class="text-brand-orange">FAMILY</span>
 				</span>
@@ -33,13 +34,14 @@
 	</nav>
 
 	{# Overlay Menu Mobile #}
-	<div id="mobile-menu" data-mobile-menu-target="menu">
+		<div id="mobile-menu" data-mobile-menu-target="menu">
 		<button data-action="click->mobile-menu#close" class="absolute top-6 right-6 text-white p-2" aria-label="Fermer le menu mobile">
 			<svg class="w-10 h-10" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path>
 			</svg>
 		</button>
 		<div class="flex flex-col items-center gap-8 text-center text-white font-bungee">
+			<img src="{{ asset('photo_chicken/logochicken.png') }}" alt="Chicken Family" class="h-16 w-auto" loading="lazy" width="128" height="128"/>
 			<span class="text-brand-yellow text-4xl mb-4 uppercase underline decoration-brand-orange decoration-4">La Carte</span>
 			{% for section in menu_sections %}
 				{% if section.id in ['poulet','kebab', 'hotdog', 'boxs', 'enfant'] %}
