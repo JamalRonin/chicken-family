@@ -26,15 +26,24 @@
 						</p>
 					</div>
 				</div>
-				<button data-action="click->chat-widget#toggle" class="text-white/60 p-2 hover:text-white transition-colors" aria-label="Fermer la fenêtre de chat">
-					<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path>
-					</svg>
-				</button>
+				<div class="flex items-center gap-2">
+					<a href="https://france.booqcloud.com/webshop/Order2POSChickenFamily/" target="_blank" class="bg-brand-red text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase">Commander</a>
+					<button data-action="click->chat-widget#toggle" class="text-white/60 p-2 hover:text-white transition-colors" aria-label="Fermer la fenêtre de chat">
+						<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path>
+						</svg>
+					</button>
+				</div>
 			</div>
 			<div id="chat-history" data-chat-widget-target="history" class="chat-container no-scrollbar">
 				<div class="bot-message message-bubble shadow-sm">
 					Bienvenue chez **Chicken Family** ! Je connais toute la carte par cœur. Quel régal cherchez-vous aujourd'hui ? 😊
+				</div>
+				<div class="flex flex-wrap gap-2 mt-3">
+					<button data-action="click->chat-widget#sendSuggestion" data-suggestion="Quel burger choisir ?" class="bg-white/90 text-brand-brown px-3 py-1 rounded-full text-[10px] font-bold uppercase shadow-sm hover:bg-white">Quel burger choisir</button>
+					<button data-action="click->chat-widget#sendSuggestion" data-suggestion="Quel kebab choisir ?" class="bg-white/90 text-brand-brown px-3 py-1 rounded-full text-[10px] font-bold uppercase shadow-sm hover:bg-white">Quel kebab choisir</button>
+					<button data-action="click->chat-widget#sendSuggestion" data-suggestion="Est-ce que c'est halal ?" class="bg-white/90 text-brand-brown px-3 py-1 rounded-full text-[10px] font-bold uppercase shadow-sm hover:bg-white">C'est halal ?</button>
+					<button data-action="click->chat-widget#sendSuggestion" data-suggestion="Où est située Chicken Family ?" class="bg-white/90 text-brand-brown px-3 py-1 rounded-full text-[10px] font-bold uppercase shadow-sm hover:bg-white">Adresse</button>
 				</div>
 			</div>
 			<div class="p-4 bg-white flex gap-2 border-t shrink-0">
