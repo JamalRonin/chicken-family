@@ -2,19 +2,34 @@
 
 {% if type == 'list' %}
 	<div class="bg-white rounded-2xl p-4 shadow-sm border border-brand-brown/5 flex flex-col items-center text-center group hover:bg-brand-brown hover:text-white transition-all">
-		<div class="text-3xl mb-2">{{ item.emoji|default('🍗') }}</div>
+		{% if item.image %}
+			<img src="{{ asset(item.image) }}" alt="{{ item.name }}" class="h-10 w-10 mb-2 object-contain" loading="lazy" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+			<div class="text-3xl mb-2" style="display:none">{{ item.emoji|default('🍗') }}</div>
+		{% else %}
+			<div class="text-3xl mb-2">{{ item.emoji|default('🍗') }}</div>
+		{% endif %}
 		<h4 class="font-bungee text-[10px] uppercase">{{ item.name }}</h4>
 		<p class="text-[8px] font-bold text-brand-orange mt-1">+1,50€</p>
 	</div>
 {% elseif type == 'upgrade' %}
 	<div class="bg-brand-brown text-white rounded-2xl p-4 shadow-xl flex flex-col items-center text-center border-2 border-brand-red/50">
-		<div class="text-3xl mb-2">{{ item.emoji|default('🍗') }}</div>
+		{% if item.image %}
+			<img src="{{ asset(item.image) }}" alt="{{ item.name }}" class="h-10 w-10 mb-2 object-contain" loading="lazy" width="40" height="40" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+			<div class="text-3xl mb-2" style="display:none">{{ item.emoji|default('🍗') }}</div>
+		{% else %}
+			<div class="text-3xl mb-2">{{ item.emoji|default('🍗') }}</div>
+		{% endif %}
 		<h4 class="font-bungee text-[10px] uppercase">{{ item.name }}</h4>
 	</div>
 {% else %}
 	<div class="bg-white rounded-[1.5rem] lg:rounded-[2rem] p-4 lg:p-6 shadow-md menu-card border border-brand-brown/5 flex flex-col group">
 		<div class="h-32 lg:h-56 bg-brand-cream rounded-xl lg:rounded-2xl mb-4 lg:mb-6 flex items-center justify-center text-4xl lg:text-6xl group-hover:scale-110 transition-transform">
-			<span>{{ item.emoji|default('🍗') }}</span>
+			{% if item.image %}
+				<img src="{{ asset(item.image) }}" alt="{{ item.name }}" class="h-24 lg:h-44 w-auto max-w-full object-contain" loading="lazy" width="176" height="176" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"/>
+				<span style="display:none">{{ item.emoji|default('🍗') }}</span>
+			{% else %}
+				<span>{{ item.emoji|default('🍗') }}</span>
+			{% endif %}
 		</div>
 		<h4 class="font-bungee text-xs lg:text-2xl mb-1 lg:mb-3 uppercase leading-tight tracking-tighter">{{ item.name }}</h4>
 		<p class="text-[10px] lg:text-sm text-brand-brown/70 flex-grow leading-tight">{{ item.description }}</p>

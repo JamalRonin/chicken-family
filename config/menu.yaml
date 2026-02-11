@@ -1,4 +1,5 @@
 parameters:
+    # Optional per-item image path (relative to assets/). If set, it replaces the emoji in UI.
     menu_items:
         burgers_classiques:
             id: "poulet"
@@ -10,6 +11,7 @@ parameters:
                 - name: "Le Poulailler"
                   desc: "Croustillant ou filet, cheddar, crudités"
                   emoji: "🍔"
+                  image: "photo_chicken/ChickenFamily_LePoulailler.jpg"
                   priceDouble: "+11,90€"
                 - name: "L'Indien"
                   desc: "Filet mariné aux épices, cheddar, crudités"
@@ -18,6 +20,7 @@ parameters:
                 - name: "Le Chicken Toast"
                   desc: "Cheddar, pain moelleux toasté, poulet"
                   emoji: "🍞"
+                  image: "photo_chicken/ChickenFamily_LeChickenToast.jpg"
                   priceDouble: "+11,90€"
 
         burgers_premiums:
@@ -30,6 +33,7 @@ parameters:
                 - name: "Le Fermier"
                   desc: "Bacon, galette pdt, cheddar, crudités"
                   emoji: "🚜"
+                  image: "photo_chicken/ChickenFamily_LeFermier.jpg"
                   priceDouble: "+11,90€"
                 - name: "Chicken Emmental"
                   desc: "Emmental fondant, poulet, pain brioché"
@@ -38,18 +42,22 @@ parameters:
                 - name: "Le Cow-Boy"
                   desc: "Cheddar, œuf, bacon, oignons cuits"
                   emoji: "🤠"
+                  image: "photo_chicken/ChickenFamily_LeCowBoy.jpg"
                   priceDouble: "+11,90€"
                 - name: "Le Tropical"
                   desc: "Cheddar, sauce curry mangue, poulet"
                   emoji: "🏝️"
+                  image: "photo_chicken/ChickenFamily_LeTropical.jpg"
                   priceDouble: "+11,90€"
                 - name: "Le Chèvre Miel"
                   desc: "Pain toasté, chèvre, miel, poulet"
                   emoji: "🍯"
+                  image: "photo_chicken/ChickenFamily_LeChevreMiel.jpg"
                   priceDouble: "+11,90€"
                 - name: "Chicken Comté"
                   desc: "Comté AOP, poulet, pain brioché"
                   emoji: "🇫🇷"
+                  image: "photo_chicken/ChickenFamily_LeComte.jpg"
                   priceDouble: "+11,90€"
                 - name: "Mille-Feuilles"
                   desc: "Escalope 3 étages, bacon, cheddar, oignons"
@@ -66,10 +74,12 @@ parameters:
                 - name: "Le Montagnard"
                   desc: "Lardons, galette pdt, raclette fondante"
                   emoji: "🏔️"
+                  image: "photo_chicken/ChickenFamily_LeMontagnard.jpg"
                   priceDouble: "+13,90€"
                 - name: "L'Italien"
                   desc: "Mozza, pesto, tomates séchées, pain brioché"
                   emoji: "🇮🇹"
+                  image: "photo_chicken/ChickenFamily_LItalien.jpg"
                   priceDouble: "+13,90€"
 
         kebab_family:
@@ -136,6 +146,7 @@ parameters:
                 - name: "Hot Dog Tenders"
                   desc: "2 tenders, 2 cheddars, crudités"
                   emoji: "🌭"
+                  image: "photo_chicken/ChickenFamily_HotDogTenders.jpg"
                   priceSolo: "8,90€"
                   priceMenu: "8,90€"
                   priceDouble: "11,90€"
@@ -169,14 +180,17 @@ parameters:
                 - name: "Box Solo"
                   desc: "5 Tenders ou 7 Wings ou Mix"
                   emoji: "🍗"
+                  image: "photo_chicken/ChickenFamily_BoxTenders1Personne.jpg"
                   priceSolo: "8,90€"
                 - name: "Apéro Box"
                   desc: "Tenders, Wings, Oignons, Sticks Mozza"
                   emoji: "🥨"
+                  image: "photo_chicken/ChickenFamily_AperoBox.jpg"
                   priceSolo: "9,90€"
                 - name: "Family Box"
                   desc: "24 Tenders ou 28 Wings ou Mix"
                   emoji: "👨‍👩‍👧‍👦"
+                  image: "photo_chicken/ChickenFamily_BoxMix.jpg"
                   priceSolo: "33,90€ / 29,90€"
 
         enfant:

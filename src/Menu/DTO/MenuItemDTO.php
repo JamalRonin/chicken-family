@@ -7,7 +7,8 @@ readonly class MenuItemDTO
     public function __construct(
         public string $name,
         public string $description,
-        public string $emoji,
+        public ?string $emoji = null,
+        public ?string $image = null,
         public ?string $priceSolo = null,
         public ?string $priceMenu = null,
         public ?string $priceDouble = null,
@@ -18,7 +19,8 @@ readonly class MenuItemDTO
         return new self(
             name: $data['name'],
             description: $data['desc'],
-            emoji: $data['emoji'],
+            emoji: $data['emoji'] ?? null,
+            image: $data['image'] ?? null,
             priceSolo: $data['priceSolo'] ?? null,
             priceMenu: $data['priceMenu'] ?? null,
             priceDouble: $data['priceDouble'] ?? null,
